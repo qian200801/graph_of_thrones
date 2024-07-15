@@ -18,6 +18,8 @@ graph = Graph()
 # 唯一约束
 graph.run("CREATE CONSTRAINT IF NOT EXISTS FOR (c:Character) REQUIRE c.name IS UNIQUE")
 
+# origin url: https://github.com/pupimvictor/NetworkOfThrones/blob/master/stormofswords.csv
+# Download the file to the corresponding directory folder of neo4j's import.
 for record in graph.run('''
 LOAD CSV WITH HEADERS FROM "file:/stormofswords.csv" AS row
 MERGE (src:Character {name: row.Source})
