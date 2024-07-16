@@ -200,7 +200,6 @@ print(result)
 
 # ##Using python-igraph
 # Building an igraph instance from Neo4j
-from igraph import Graph as IGraph
 query = '''
 MATCH (c1:Character)-[r:INTERACTS]->(c2:Character)
 RETURN c1.name, c2.name, r.weight AS weight
